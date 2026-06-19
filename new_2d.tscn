@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cyb6gk8l8fmv8"]
 
-[node name="new 2d" type="Node2D" unique_id=836951057]
+[ext_resource type="PackedScene" uid="uid://cyb6gk8l8fmv8" path="res://new_2d.tscn" id="1_ib157"]
+
+[node name="new 2d" unique_id=836951057 instance=ExtResource("1_ib157")]

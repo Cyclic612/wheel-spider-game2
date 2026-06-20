@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyd0e7geaqfq0"]
 
-[ext_resource type="Script" uid="uid://c2fdf0h6yepi8" path="res://character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="Script" uid="uid://c67yb7k31ok2r" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://4umnieky7slk" path="res://icon.svg" id="2_ghijl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
@@ -19,4 +19,11 @@ texture = ExtResource("2_ghijl")
 position = Vector2(594, 385)
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1482851933]
+[node name="DashDuration" type="Timer" parent="." unique_id=2080913080]
+wait_time = 0.2
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=1240501381]
+wait_time = 5.0
+
+[connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

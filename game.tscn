@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://c7gw6l7b5jdvu"]
 
 [ext_resource type="PackedScene" uid="uid://dyd0e7geaqfq0" path="res://character_body_2d.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://drmlrjanfskgq" path="res://enemy.tscn" id="2_e2o6t"]
 
 [node name="game" type="Node2D" unique_id=1258414825]
 
 [node name="player" parent="." unique_id=973412525 instance=ExtResource("1_80nbo")]
+
+[node name="enemy" parent="." unique_id=25562165 node_paths=PackedStringArray("player") instance=ExtResource("2_e2o6t")]
+player = NodePath("../player")

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bau2vm6qxig8s" path="res://orb_shooter.gd" id="3_ghijl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 94.19129
+radius = 53.75872
 
 [node name="player" type="CharacterBody2D" unique_id=973412525]
 position = Vector2(-21, -19)

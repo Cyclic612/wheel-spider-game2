@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c67yb7k31ok2r" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://4umnieky7slk" path="res://icon.svg" id="2_ghijl"]
+[ext_resource type="Script" uid="uid://bau2vm6qxig8s" path="res://orb_shooter.gd" id="3_ghijl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 94.19129
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=973412525]
-position = Vector2(43, -2)
+[node name="player" type="CharacterBody2D" unique_id=973412525]
+position = Vector2(-21, -19)
 script = ExtResource("1_ij6vw")
 metadata/_edit_group_ = true
 
@@ -24,6 +25,15 @@ wait_time = 0.2
 
 [node name="DashCooldown" type="Timer" parent="." unique_id=1240501381]
 wait_time = 5.0
+
+[node name="OrbShooter" type="Marker2D" parent="." unique_id=1872699405 node_paths=PackedStringArray("player")]
+position = Vector2(592, 387)
+script = ExtResource("3_ghijl")
+player = NodePath("..")
+
+[node name="OrbCooldown" type="Timer" parent="OrbShooter" unique_id=708206862]
+wait_time = 2.0
+one_shot = true
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

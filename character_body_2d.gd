@@ -17,6 +17,9 @@ var grapple_point : Vector2 = Vector2.ZERO
 var rope_length : float = 0.0
 @onready var rope_line : Line2D = $GrappleLine
 
+# Health initialization
+var health : int = 100
+
 func _physics_process(delta: float) -> void:
 	# Takes movement inputs and gives player ice physics with a lerp
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")

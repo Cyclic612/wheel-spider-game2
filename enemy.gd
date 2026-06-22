@@ -4,7 +4,8 @@ class_name Enemy
 const SPEED = 300.0
 const ACCELERATION = 0.05
 @export var player : Node2D
-
+var health : int = 15
+var damage : int = 10
 
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)

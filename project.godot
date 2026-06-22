@@ -15,10 +15,18 @@ run/main_scene="uid://c7gw6l7b5jdvu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*uid://co8l8twjyudc7"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg")
 
 [input]
 
@@ -71,3 +79,7 @@ grapple={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[signal_bus]
+
+signals={}

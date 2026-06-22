@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://1rw6qapq2rwg"]
+
+[ext_resource type="Script" uid="uid://b0wihomg3d22j" path="res://enemy_spawner.gd" id="1_ewhtn"]
+
+[sub_resource type="PackedScene" id="PackedScene_ewhtn"]
+
+[node name="enemy_spawner" type="Node2D" unique_id=507985904]
+script = ExtResource("1_ewhtn")
+enemy_prefab = SubResource("PackedScene_ewhtn")
+
+[node name="Timer" type="Timer" parent="." unique_id=1036020041]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

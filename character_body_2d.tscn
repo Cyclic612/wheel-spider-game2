@@ -8,7 +8,7 @@
 radius = 53.75872
 
 [node name="player" type="CharacterBody2D" unique_id=973412525]
-position = Vector2(-21, -19)
+position = Vector2(-5, -2)
 script = ExtResource("1_ij6vw")
 metadata/_edit_group_ = true
 
@@ -34,6 +34,15 @@ player = NodePath("..")
 [node name="OrbCooldown" type="Timer" parent="OrbShooter" unique_id=708206862]
 wait_time = 2.0
 one_shot = true
+
+[node name="GrappleLine" type="Line2D" parent="." unique_id=1160511285]
+visible = false
+points = PackedVector2Array(593, 387)
+width = 3.0
+
+[node name="GrappleRayCast" type="RayCast2D" parent="." unique_id=621175317]
+position = Vector2(592, 387)
+target_position = Vector2(400, 0)
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

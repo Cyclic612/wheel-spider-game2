@@ -1,21 +1,58 @@
 [gd_scene format=3 uid="uid://citmwtmoq5p8u"]
 
 [ext_resource type="Script" uid="uid://dbpvw3h2kvwt6" path="res://orb.gd" id="1_ogqpy"]
-[ext_resource type="Texture2D" uid="uid://4umnieky7slk" path="res://icon.svg" id="2_xdlj8"]
+[ext_resource type="Texture2D" uid="uid://cfrklkeidqd68" path="res://textures/Web Orb_0.tres" id="2_pbj6m"]
+[ext_resource type="Texture2D" uid="uid://0njyeery7wpt" path="res://textures/Web Orb_1.tres" id="3_retvd"]
+[ext_resource type="Texture2D" uid="uid://cqehudwruksot" path="res://textures/Web Orb_2.tres" id="4_2qywt"]
+[ext_resource type="Texture2D" uid="uid://bmydww3sxpc5e" path="res://textures/Web Orb_3.tres" id="5_n5ild"]
+[ext_resource type="Texture2D" uid="uid://bp81iligvll" path="res://textures/Web Orb_4.tres" id="6_0xexy"]
+[ext_resource type="Texture2D" uid="uid://cfcuo557pywus" path="res://textures/Web Orb_5.tres" id="7_j2cfm"]
+[ext_resource type="Texture2D" uid="uid://cvox76tfu36qs" path="res://textures/Web Orb_6.tres" id="8_vxb2f"]
+[ext_resource type="Texture2D" uid="uid://bk3wn4rd8dflr" path="res://textures/Web Orb_7.tres" id="9_q7ry1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
 size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2orq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pbj6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_retvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2qywt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n5ild")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0xexy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j2cfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vxb2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q7ry1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Orb" type="Area2D" unique_id=476789315]
 position = Vector2(0, 1)
 script = ExtResource("1_ogqpy")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1788143250]
-position = Vector2(29, 16)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_xdlj8")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=164946575]
 position = Vector2(29, 16)
 shape = SubResource("RectangleShape2D_80nbo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687061898]
+sprite_frames = SubResource("SpriteFrames_g2orq")

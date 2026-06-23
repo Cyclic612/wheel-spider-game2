@@ -1,7 +1,7 @@
 extends Area2D
 class_name Orb
 
-var speed = 2000.0
+var speed = 500.0
 var direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 
@@ -12,4 +12,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$AnimatedSprite2D.animation = "default"
+	$AnimatedSprite2D.play()
 	translate(speed * direction * delta)

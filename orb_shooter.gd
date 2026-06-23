@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("shoot_orb") and $OrbCooldown.is_stopped():
 		$OrbCooldown.start()
 		var orb = orb_prefab.instantiate()
-		orb.position = position
+		orb.position = global_position
 		orb.direction = direction
 		get_tree().root.add_child(orb)
 		

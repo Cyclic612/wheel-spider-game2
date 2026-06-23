@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED : float = 500.0
 const DASH_SPEED : float = 1500.0
 const ACCELERATION : float = 0.05
+const KNOCKBACK_FORCE : float = 1000.0
 var dashing : bool = false
 var can_dash : bool = true
 
@@ -42,7 +43,9 @@ func _physics_process(delta: float) -> void:
 	if velocity != Vector2.ZERO:
 		$AnimatedSprite2D.animation = "walk"
 		if direction.x > 0:
-			$AnimatedSprite2D.flip_h
+			$AnimatedSprite2D.flip_h = false
+		elif direction.x < 0:
+			$AnimatedSprite2D.flip_h = true
 	else:
 		$AnimatedSprite2D.animation = "idle"
 	move_and_slide()
@@ -117,6 +120,13 @@ func _update_rope_visual():
 
 func _on_area_2d_body_entered(area: Node2D) -> void:
 	if area is Enemy:
+		var knockback_direction = (global_position - area.global_position).normalized()
+		velocity = knockback_direction * KNOCKBACK_FORCE
+		
+		$AnimatedSprite2D.modulate = Color.DARK_RED
+		await get_tree().create_timer(0.1).timeout
+		$AnimatedSprite2D.modulate = Color.WHITE
+		
 		health -= 10
-		if health == 0:
+		if health <= 0:
 			print("you died!")

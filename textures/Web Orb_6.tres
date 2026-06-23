@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cvox76tfu36qs"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Web Orb.aseprite-a5e0e144bd6b429431640a33a153c8f0.res" id="1_kinyl"]
+
+[resource]
+atlas = ExtResource("1_kinyl")
+region = Rect2(48, 0, 8, 8)

@@ -15,12 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cc0h4twvxg2kv" path="res://textures/Business Spider_10.tres" id="13_sxias"]
 [ext_resource type="Texture2D" uid="uid://bm8vcich815q" path="res://textures/Business Spider_11.tres" id="14_ucfvk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 53.75872
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_44cfe"]
-size = Vector2(73, 74)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
@@ -70,11 +64,21 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44cfe"]
+size = Vector2(25, 33)
+
 [node name="player" type="CharacterBody2D" unique_id=973412525]
 position = Vector2(-66, -7)
 script = ExtResource("1_ij6vw")
-swing_speed = null
 metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=752172091]
+position = Vector2(44, 1)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"walk"
 
 [node name="DashDuration" type="Timer" parent="." unique_id=2080913080]
 wait_time = 0.2
@@ -83,7 +87,7 @@ wait_time = 0.2
 wait_time = 5.0
 
 [node name="OrbShooter" type="Marker2D" parent="." unique_id=1872699405 node_paths=PackedStringArray("player")]
-position = Vector2(592, 387)
+position = Vector2(50, -8)
 script = ExtResource("3_ghijl")
 player = NodePath("..")
 
@@ -97,25 +101,22 @@ points = PackedVector2Array(593, 387)
 width = 3.0
 
 [node name="GrappleRayCast" type="RayCast2D" parent="." unique_id=621175317]
-position = Vector2(592, 387)
-target_position = Vector2(400, 0)
+position = Vector2(43, 2)
+target_position = Vector2(175, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=160226113]
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=45278730]
-position = Vector2(594, 385)
+position = Vector2(42, 2)
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="PhysicalCollision" type="CollisionShape2D" parent="." unique_id=1037617857]
-position = Vector2(593.5, 386)
+position = Vector2(42, 1)
 shape = SubResource("RectangleShape2D_44cfe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=752172091]
-sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"walk"
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893346145]
-zoom = Vector2(4, 4)
+position = Vector2(42, 2)
+zoom = Vector2(3, 3)
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

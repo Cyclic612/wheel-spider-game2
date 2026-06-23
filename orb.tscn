@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cvox76tfu36qs" path="res://textures/Web Orb_6.tres" id="8_vxb2f"]
 [ext_resource type="Texture2D" uid="uid://bk3wn4rd8dflr" path="res://textures/Web Orb_7.tres" id="9_q7ry1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_up3tq"]
+radius = 5.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2orq"]
 animations = [{
@@ -46,13 +46,12 @@ animations = [{
 }]
 
 [node name="Orb" type="Area2D" unique_id=476789315]
-position = Vector2(0, 1)
+position = Vector2(11, 4)
 script = ExtResource("1_ogqpy")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=164946575]
-position = Vector2(29, 16)
-shape = SubResource("RectangleShape2D_80nbo")
+shape = SubResource("CircleShape2D_up3tq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=687061898]
 sprite_frames = SubResource("SpriteFrames_g2orq")

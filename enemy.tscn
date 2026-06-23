@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://b02tpk7ct36ea" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://4umnieky7slk" path="res://icon.svg" id="1_7k104"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(63, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(38, 33)
 
 [node name="enemy" type="CharacterBody2D" unique_id=25562165]
+position = Vector2(2, 2)
 script = ExtResource("1_4gyqm")
 metadata/_edit_group_ = true
 
@@ -15,6 +19,14 @@ position = Vector2(700, 197)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_7k104")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=978587195]
-position = Vector2(699.5, 197)
-shape = SubResource("RectangleShape2D_g4v7s")
+[node name="Area2D" type="Area2D" parent="." unique_id=876973539]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=978587195]
+position = Vector2(700, 198)
+shape = SubResource("CircleShape2D_4gyqm")
+
+[node name="PhysicalCollision" type="CollisionShape2D" parent="." unique_id=1986233159]
+position = Vector2(700, 198.5)
+shape = SubResource("RectangleShape2D_qi2p4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

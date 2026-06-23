@@ -15,3 +15,10 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
+		
+
+func _on_area_2d_body_entered(area: Node2D) -> void:
+	if area is Orb:
+		health -= 5
+		if health == 0:
+			queue_free()

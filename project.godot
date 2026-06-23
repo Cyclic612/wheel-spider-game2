@@ -26,7 +26,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg")
+enabled=PackedStringArray("res://addons/SignalBus/plugin.cfg", "res://addons/aseprite_spritesheet_importer/plugin.cfg")
 
 [input]
 
@@ -76,6 +76,7 @@ grapple={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,37 @@
+[remap]
+
+importer="aseprite.spritesheet.importer"
+type="PortableCompressedTexture2D"
+uid="uid://cfenhkcnxs0vm"
+path="res://.godot/imported/Business Spider.aseprite-61c807822a3e6bc18364dc214f090d93.res"
+
+[deps]
+
+files=["res://textures/Business Spider_0.tres", "res://textures/Business Spider_1.tres", "res://textures/Business Spider_2.tres", "res://textures/Business Spider_3.tres", "res://textures/Business Spider_4.tres", "res://textures/Business Spider_5.tres", "res://textures/Business Spider_6.tres", "res://textures/Business Spider_7.tres", "res://textures/Business Spider_8.tres", "res://textures/Business Spider_9.tres", "res://textures/Business Spider_10.tres", "res://textures/Business Spider_11.tres", "res://textures/Business Spider_spriteframes.tres"]
+
+source_file="res://Business Spider.aseprite"
+dest_files=["res://.godot/imported/Business Spider.aseprite-61c807822a3e6bc18364dc214f090d93.res", "res://textures/Business Spider_0.tres", "res://textures/Business Spider_1.tres", "res://textures/Business Spider_2.tres", "res://textures/Business Spider_3.tres", "res://textures/Business Spider_4.tres", "res://textures/Business Spider_5.tres", "res://textures/Business Spider_6.tres", "res://textures/Business Spider_7.tres", "res://textures/Business Spider_8.tres", "res://textures/Business Spider_9.tres", "res://textures/Business Spider_10.tres", "res://textures/Business Spider_11.tres", "res://textures/Business Spider_spriteframes.tres"]
+
+[params]
+
+layers/export_hidden_layers=false
+layers/flatten_layer_groups=false
+layers/split_layers=false
+generate_resources/atlas_textures=true
+generate_resources/spriteframes=true
+generate_resources/ignore_framerate=false
+export_options/sheet_type=0
+export_options/sheet_width=0
+export_options/sheet_height=0
+export_options/sheet_columns=0
+export_options/sheet_rows=0
+export_options/border_padding=0
+export_options/shape_padding=0
+export_options/inner_padding=0
+export_options/trim=false
+export_options/extrude=false
+compress/mode=0
+compress/lossy_quality=0.8
+compress/normal_map=false
+debug/keep_json=false
+debug/keep_png=false

@@ -21,7 +21,7 @@ var rope_length : float = 0.0
 var health : int = 100
 
 func _physics_process(delta: float) -> void:
-	# Takes movement inputs and gives player ice physics with a lerp
+	# Takes movement inputs
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if is_grappling:
@@ -38,9 +38,17 @@ func _physics_process(delta: float) -> void:
 		$DashCooldown.start()
 		$DashDuration.start()
 	
+	$AnimatedSprite2D.play()
+	if velocity != Vector2.ZERO:
+		$AnimatedSprite2D.animation = "walk"
+		if direction.x > 0:
+			$AnimatedSprite2D.flip_h
+	else:
+		$AnimatedSprite2D.animation = "idle"
 	move_and_slide()
 	_update_rope_visual()
 	
+		
 # Ends dash
 func _on_dash_timer_timeout() -> void:
 	dashing = false
@@ -105,3 +113,10 @@ func _update_rope_visual():
 	elif has_node("GrappleLine"):
 		rope_line.visible = false
 	
+
+
+func _on_area_2d_body_entered(area: Node2D) -> void:
+	if area is Enemy:
+		health -= 10
+		if health == 0:
+			print("you died!")

@@ -73,7 +73,6 @@ animations = [{
 [node name="player" type="CharacterBody2D" unique_id=973412525]
 position = Vector2(-66, -7)
 script = ExtResource("1_ij6vw")
-swing_speed = null
 metadata/_edit_group_ = true
 
 [node name="DashDuration" type="Timer" parent="." unique_id=2080913080]

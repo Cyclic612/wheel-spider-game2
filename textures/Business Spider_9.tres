@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://ba58m214cr8aw"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Business Spider.aseprite-61c807822a3e6bc18364dc214f090d93.res" id="1_imv3m"]
+
+[resource]
+atlas = ExtResource("1_imv3m")
+region = Rect2(360, 0, 40, 40)

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal healthChanged
+
 # Variable initialization for movement and dashing
 const SPEED : float = 500.0
 const DASH_SPEED : float = 1500.0
@@ -19,7 +21,8 @@ var rope_length : float = 0.0
 @onready var rope_line : Line2D = $GrappleLine
 
 # Health initialization
-var health : int = 100
+var max_health : int = 90
+var current_health : int = 90
 
 func _physics_process(delta: float) -> void:
 	# Takes movement inputs
@@ -123,10 +126,12 @@ func _on_area_2d_body_entered(area: Node2D) -> void:
 		var knockback_direction = (global_position - area.global_position).normalized()
 		velocity = knockback_direction * KNOCKBACK_FORCE
 		
+		healthChanged.emit()
+		
 		$AnimatedSprite2D.modulate = Color.DARK_RED
 		await get_tree().create_timer(0.1).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
 		
-		health -= 10
-		if health <= 0:
+		current_health -= 10
+		if current_health < 0:
 			print("you died!")

@@ -116,7 +116,7 @@ shape = SubResource("RectangleShape2D_44cfe")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893346145]
 position = Vector2(42, 2)
-zoom = Vector2(3, 3)
+zoom = Vector2(3.5, 3.5)
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

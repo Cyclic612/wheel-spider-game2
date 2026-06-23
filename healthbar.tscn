@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4gfes2a3yipe"]
+
+[ext_resource type="Texture2D" uid="uid://cmrpcmp1jnj2c" path="res://Healthbar Base.aseprite" id="1_vii3e"]
+[ext_resource type="Texture2D" uid="uid://c6wu0ytu1e2ur" path="res://Healthbar Meter.aseprite" id="2_bq16f"]
+[ext_resource type="Script" uid="uid://bj41f2cexrps0" path="res://texture_progress_bar.gd" id="3_bq16f"]
+
+[node name="healthbar" type="TextureProgressBar" unique_id=1550883031]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 74.0
+offset_bottom = 19.0
+value = 100.0
+texture_under = ExtResource("1_vii3e")
+texture_progress = ExtResource("2_bq16f")
+script = ExtResource("3_bq16f")

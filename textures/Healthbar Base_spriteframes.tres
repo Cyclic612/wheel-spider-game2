@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dbfohib7n8vqt"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Healthbar Base.aseprite-a6a779c034570a3512fa435f8c6c4e10.res" id="1_x6syr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi7by"]
+atlas = ExtResource("1_x6syr")
+region = Rect2(0, 0, 71, 17)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi7by")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

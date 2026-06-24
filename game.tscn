@@ -3,18 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://dyd0e7geaqfq0" path="res://character_body_2d.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://1rw6qapq2rwg" path="res://enemy_spawner.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://c4gfes2a3yipe" path="res://healthbar.tscn" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://cvu81rm5ghb7f" path="res://dash_cooldown.tscn" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://drmlrjanfskgq" path="res://enemy.tscn" id="3_feb5d"]
 
 [node name="game" type="Node2D" unique_id=1258414825]
 
-[node name="player" parent="." unique_id=973412525 instance=ExtResource("1_80nbo")]
+[node name="player" parent="." unique_id=973412525 node_paths=PackedStringArray("dash_cooldown") instance=ExtResource("1_80nbo")]
 position = Vector2(-46, -9)
+dash_cooldown = NodePath("dash_cooldown")
 
-[node name="Healthbar" parent="player" unique_id=1731441223 node_paths=PackedStringArray("player") instance=ExtResource("2_fc0e3")]
+[node name="healthbar" parent="player" unique_id=1731441223 node_paths=PackedStringArray("player") instance=ExtResource("2_fc0e3")]
 offset_left = -119.0
 offset_top = -86.0
 offset_right = -119.0
 offset_bottom = -86.0
+player = NodePath("..")
+
+[node name="dash_cooldown" parent="player" unique_id=1355733330 node_paths=PackedStringArray("player") instance=ExtResource("3_7jktm")]
+offset_left = 29.0
+offset_top = 20.0
+offset_right = 59.0
+offset_bottom = 23.0
+fill_mode = 1
 player = NodePath("..")
 
 [node name="enemy_spawner" parent="." unique_id=507985904 node_paths=PackedStringArray("target") instance=ExtResource("2_e2o6t")]

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dhpv6qyhbbpos"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Dash Cooldown Base.aseprite-b020bd88cfde0e0326012c8e062e932e.res" id="1_fe8i5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_164vm"]
+atlas = ExtResource("1_fe8i5")
+region = Rect2(0, 0, 30, 3)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_164vm")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

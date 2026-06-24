@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cvu81rm5ghb7f"]
+
+[ext_resource type="Texture2D" uid="uid://uv74if4ho0cx" path="res://Dash Cooldown Base.aseprite" id="1_njsgs"]
+[ext_resource type="Texture2D" uid="uid://bwpejumcif6ft" path="res://Dash Cooldown Meter.aseprite" id="2_u3gsp"]
+[ext_resource type="Script" uid="uid://dncanke8xpfhq" path="res://dash_cooldown.gd" id="3_u3gsp"]
+
+[node name="dash_cooldown" type="TextureProgressBar" unique_id=1355733330 node_paths=PackedStringArray("timer")]
+offset_right = 30.0
+offset_bottom = 3.0
+value = 100.0
+texture_under = ExtResource("1_njsgs")
+texture_progress = ExtResource("2_u3gsp")
+script = ExtResource("3_u3gsp")
+timer = NodePath("dashCooldownTimer")
+
+[node name="dashCooldownTimer" type="Timer" parent="." unique_id=258175711]
+wait_time = 5.0
+one_shot = true

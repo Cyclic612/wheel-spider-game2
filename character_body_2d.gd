@@ -24,6 +24,16 @@ var rope_length : float = 0.0
 var max_health : int = 90
 var current_health : int = 90
 
+@export var dash_cooldown : Control
+
+func _ready():
+	dash_cooldown.dashReplenished.connect(_dashModulation)
+
+func _dashModulation():
+	var tween = create_tween()
+	$AnimatedSprite2D.modulate = Color(2, 2, 2, 2)
+	tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.1)
+
 func _physics_process(delta: float) -> void:
 	# Takes movement inputs
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -126,12 +136,12 @@ func _on_area_2d_body_entered(area: Node2D) -> void:
 		var knockback_direction = (global_position - area.global_position).normalized()
 		velocity = knockback_direction * KNOCKBACK_FORCE
 		
+		current_health -= 10
 		healthChanged.emit()
 		
+		var damage_tween = create_tween()
 		$AnimatedSprite2D.modulate = Color.DARK_RED
-		await get_tree().create_timer(0.1).timeout
-		$AnimatedSprite2D.modulate = Color.WHITE
+		damage_tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.1)
 		
-		current_health -= 10
 		if current_health < 0:
 			print("you died!")

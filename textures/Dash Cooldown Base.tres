@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://mx7xlfvnv1sp"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Dash Cooldown Base.aseprite-b020bd88cfde0e0326012c8e062e932e.res" id="1_up42c"]
+
+[resource]
+atlas = ExtResource("1_up42c")
+region = Rect2(0, 0, 30, 3)

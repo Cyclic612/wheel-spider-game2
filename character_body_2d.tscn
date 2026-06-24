@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cc0h4twvxg2kv" path="res://textures/Business Spider_10.tres" id="13_sxias"]
 [ext_resource type="Texture2D" uid="uid://bm8vcich815q" path="res://textures/Business Spider_11.tres" id="14_ucfvk"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bq16f"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
@@ -76,6 +78,7 @@ script = ExtResource("1_ij6vw")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=752172091]
+material = SubResource("CanvasItemMaterial_bq16f")
 position = Vector2(44, 1)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"walk"
@@ -85,6 +88,7 @@ wait_time = 0.2
 
 [node name="DashCooldown" type="Timer" parent="." unique_id=1240501381]
 wait_time = 5.0
+one_shot = true
 
 [node name="OrbShooter" type="Marker2D" parent="." unique_id=1872699405 node_paths=PackedStringArray("player")]
 position = Vector2(50, -8)

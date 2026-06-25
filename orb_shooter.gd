@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	# Shoots orbs from the player when the corresponding button is pressed
 	if Input.is_action_pressed("shoot_orb") and $OrbCooldown.is_stopped():
 		$OrbCooldown.start()
+		$OrbSFX.play()
 		var orb = orb_prefab.instantiate()
 		orb.position = global_position
 		orb.direction = direction

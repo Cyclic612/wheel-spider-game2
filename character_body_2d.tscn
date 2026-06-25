@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ba58m214cr8aw" path="res://textures/Business Spider_9.tres" id="12_76bt2"]
 [ext_resource type="Texture2D" uid="uid://cc0h4twvxg2kv" path="res://textures/Business Spider_10.tres" id="13_sxias"]
 [ext_resource type="Texture2D" uid="uid://bm8vcich815q" path="res://textures/Business Spider_11.tres" id="14_ucfvk"]
+[ext_resource type="AudioStream" uid="uid://cdlbmyvtsk008" path="res://universfield-swoosh-018-383967.mp3" id="15_76bt2"]
+[ext_resource type="AudioStream" uid="uid://dbg8o5xiw8a4a" path="res://universfield-thud-291047.mp3" id="16_sxias"]
+[ext_resource type="AudioStream" uid="uid://b86e8hfkvpuo6" path="res://universfield-hitting-the-sandbag-131853.mp3" id="17_ucfvk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bq16f"]
 
@@ -99,6 +102,10 @@ player = NodePath("..")
 wait_time = 2.0
 one_shot = true
 
+[node name="OrbSFX" type="AudioStreamPlayer2D" parent="OrbShooter" unique_id=468943060]
+position = Vector2(-50, 8)
+stream = ExtResource("17_ucfvk")
+
 [node name="GrappleLine" type="Line2D" parent="." unique_id=1160511285]
 visible = false
 points = PackedVector2Array(593, 387)
@@ -121,6 +128,12 @@ shape = SubResource("RectangleShape2D_44cfe")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893346145]
 position = Vector2(42, 2)
 zoom = Vector2(3.5, 3.5)
+
+[node name="DashSFX" type="AudioStreamPlayer2D" parent="." unique_id=535066454]
+stream = ExtResource("15_76bt2")
+
+[node name="DamageSFX" type="AudioStreamPlayer2D" parent="." unique_id=1389127684]
+stream = ExtResource("16_sxias")
 
 [connection signal="timeout" from="DashDuration" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dashing = true
 		can_dash = false
+		$DashSFX.play()
 		$DashCooldown.start()
 		$DashDuration.start()
 	
@@ -139,6 +140,7 @@ func _on_area_2d_body_entered(area: Node2D) -> void:
 		current_health -= 10
 		healthChanged.emit()
 		
+		$DamageSFX.play()
 		var damage_tween = create_tween()
 		$AnimatedSprite2D.modulate = Color.DARK_RED
 		damage_tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.1)

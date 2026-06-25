@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cipf1mpbdpfd0"]
+
+[ext_resource type="Texture2D" uid="uid://c66i8vx3j4ul7" path="res://textures/Menu Sprites (spider gamejam)_0.tres" id="1_aj7o7"]
+[ext_resource type="Texture2D" uid="uid://clt618iyhfrbe" path="res://textures/Menu Sprites (spider gamejam)_1.tres" id="2_60nyd"]
+[ext_resource type="Texture2D" uid="uid://nha1adslc4aq" path="res://textures/Menu Sprites (spider gamejam)_2.tres" id="3_sqd60"]
+[ext_resource type="Texture2D" uid="uid://d3l6b134lu0rc" path="res://textures/Menu Sprites (spider gamejam)_3.tres" id="4_tjvc6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aj7o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_60nyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sqd60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tjvc6")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

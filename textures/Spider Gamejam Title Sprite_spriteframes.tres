@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cuay8tatced2d"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Spider Gamejam Title Sprite.aseprite-1d908de238fcafb124d310608d3aacb6.res" id="1_ftvnd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgkfa"]
+atlas = ExtResource("1_ftvnd")
+region = Rect2(0, 0, 256, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgkfa")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

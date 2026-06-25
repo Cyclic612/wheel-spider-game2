@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wheel spider gamev2"
-run/main_scene="uid://c7gw6l7b5jdvu"
+run/main_scene="uid://dj8j4s0nnjdxb"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

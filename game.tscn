@@ -8,17 +8,28 @@
 [ext_resource type="PackedScene" uid="uid://drmlrjanfskgq" path="res://enemy.tscn" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://jhoaupxsgakv" path="res://textures/Return to Menu Sprite (gamejam)_0.tres" id="7_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://c5g2j1y0m1pvo" path="res://textures/Return to Menu Sprite (gamejam)_1.tres" id="8_vef74"]
+[ext_resource type="Texture2D" uid="uid://uog3w04pqrar" path="res://textures/Death Message Sprite.tres" id="9_vef74"]
+[ext_resource type="AudioStream" uid="uid://cefg4ba457cis" path="res://inst 2_1.ogg" id="10_hve3p"]
+[ext_resource type="Texture2D" uid="uid://dpg5nxixgka1y" path="res://textures/You Win Message Sprite.tres" id="10_lc2xo"]
+[ext_resource type="Script" uid="uid://cvqjyvcfectav" path="res://game_timer.gd" id="10_mfdv2"]
+[ext_resource type="Script" uid="uid://bn70e0l4b2kls" path="res://time_label.gd" id="12_iotsf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hve3p"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_iotsf"]
 
 [node name="game" type="Node2D" unique_id=1258414825 node_paths=PackedStringArray("player")]
 script = ExtResource("1_ryrav")
 player = NodePath("player")
 
-[node name="enemy_spawner" parent="." unique_id=507985904 node_paths=PackedStringArray("target") instance=ExtResource("2_e2o6t")]
+[node name="enemy_spawner" parent="." unique_id=507985904 node_paths=PackedStringArray("target", "time_label") instance=ExtResource("2_e2o6t")]
 enemy_prefab = ExtResource("3_feb5d")
 target = NodePath("../player")
+time_label = NodePath("../CanvasLayer/game_timer/TimeLabel")
 
 [node name="player" parent="." unique_id=973412525 node_paths=PackedStringArray("dash_cooldown") instance=ExtResource("1_80nbo")]
-position = Vector2(270, 61)
+position = Vector2(275, 82)
 dash_cooldown = NodePath("dash_cooldown")
 
 [node name="healthbar" parent="player" unique_id=1731441223 node_paths=PackedStringArray("player") instance=ExtResource("2_fc0e3")]
@@ -39,6 +50,7 @@ player = NodePath("..")
 [node name="death_screen" type="Control" parent="player" unique_id=1160805327]
 process_mode = 3
 visible = false
+material = SubResource("CanvasItemMaterial_hve3p")
 layout_mode = 3
 anchors_preset = 0
 offset_left = -270.0
@@ -49,15 +61,98 @@ offset_bottom = -21.0
 [node name="MenuButton" type="TextureButton" parent="player/death_screen" unique_id=1384917834]
 layout_mode = 0
 offset_left = 282.0
-offset_top = 68.0
+offset_top = 89.0
 offset_right = 346.0
-offset_bottom = 132.0
+offset_bottom = 153.0
 texture_normal = ExtResource("7_j5wjh")
 texture_hover = ExtResource("8_vef74")
 
 [node name="YouDied" type="TextureRect" parent="player/death_screen" unique_id=126511130]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 223.0
+offset_top = -15.0
+offset_right = 326.0
+offset_bottom = 82.0
+grow_horizontal = 0
+texture = ExtResource("9_vef74")
+
+[node name="win_screen" type="Control" parent="player" unique_id=1711736550]
+process_mode = 3
+visible = false
+material = SubResource("CanvasItemMaterial_hve3p")
+layout_mode = 3
+anchors_preset = 0
+offset_left = -270.0
+offset_top = -61.0
+offset_right = -230.0
+offset_bottom = -21.0
+
+[node name="MenuButton2" type="TextureButton" parent="player/win_screen" unique_id=191099170]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 282.0
+offset_top = 89.0
+offset_right = 346.0
+offset_bottom = 153.0
+texture_normal = ExtResource("7_j5wjh")
+texture_hover = ExtResource("8_vef74")
+
+[node name="YouWin" type="TextureRect" parent="player/win_screen" unique_id=342362644]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 223.0
+offset_top = -15.0
+offset_right = 326.0
+offset_bottom = 82.0
+grow_horizontal = 0
+texture = ExtResource("10_lc2xo")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=666439932]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2134444066]
+stream = ExtResource("10_hve3p")
+volume_db = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=40087786]
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 0, 0)
+
+[node name="game_timer" type="Control" parent="CanvasLayer" unique_id=132576610 node_paths=PackedStringArray("timer", "label")]
+layout_mode = 3
+anchor_left = 0.040000003
+anchor_right = 0.120000005
+anchor_bottom = 0.078
+offset_left = 90.20572
+offset_top = -2.857143
+offset_right = 92.33145
+offset_bottom = -0.25831604
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_mfdv2")
+timer = NodePath("CountdownTimer")
+label = NodePath("TimeLabel")
+
+[node name="CountdownTimer" type="Timer" parent="CanvasLayer/game_timer" unique_id=1186487283]
+wait_time = 3.0
+one_shot = true
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/game_timer" unique_id=1646762521 node_paths=PackedStringArray("timer")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_right = 0.49
+offset_left = -37.342857
+offset_right = 30.799995
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_iotsf")
+script = ExtResource("12_iotsf")
+timer = NodePath("../CountdownTimer")
+
+[connection signal="pressed" from="player/death_screen/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="player/win_screen/MenuButton2" to="." method="_on_menu_button_2_pressed"]
+[connection signal="timeout" from="CanvasLayer/game_timer/CountdownTimer" to="." method="_on_countdown_timer_timeout"]

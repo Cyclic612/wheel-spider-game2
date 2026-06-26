@@ -2,6 +2,10 @@ extends Node2D
 
 @export var enemy_prefab : PackedScene
 @export var target : Node2D
+@export var time_label : Control
+
+func _ready():
+	time_label.MoreEnemies.connect(_update)
 
 func _on_timer_timeout() -> void:
 	var enemy = enemy_prefab.instantiate()
@@ -12,3 +16,6 @@ func _on_timer_timeout() -> void:
 	
 	enemy.player = target
 	add_child(enemy)
+	
+func _update():
+	print("stuff")

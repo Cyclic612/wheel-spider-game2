@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dpg5nxixgka1y"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/You Win Message Sprite.aseprite-e58296342216b67054fb1ee39641ee8b.res" id="1_wms51"]
+
+[resource]
+atlas = ExtResource("1_wms51")
+region = Rect2(0, 0, 103, 97)

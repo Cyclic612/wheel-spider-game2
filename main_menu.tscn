@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3l6b134lu0rc" path="res://textures/Menu Sprites (spider gamejam)_3.tres" id="4_qe12f"]
 [ext_resource type="AudioStream" uid="uid://c5fjnupuvv1fr" path="res://universfield-computer-mouse-click-352734.mp3" id="5_glbon"]
 [ext_resource type="Texture2D" uid="uid://dyoa67wk42oug" path="res://textures/Spider Gamejam Title Sprite.tres" id="5_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://ddcxskplehnpb" path="res://Power Chord Organ.ogg" id="8_8qtwp"]
 
 [node name="main_menu" type="Control" unique_id=2097625570]
 layout_mode = 3
@@ -63,7 +64,7 @@ texture_hover = ExtResource("4_qe12f")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2145841388]
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=2145841388]
 stream = ExtResource("5_glbon")
 
 [node name="Title" type="TextureRect" parent="." unique_id=256371890]
@@ -78,6 +79,9 @@ grow_horizontal = 2
 texture = ExtResource("5_nlkkf")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1906530809]
+stream = ExtResource("8_8qtwp")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

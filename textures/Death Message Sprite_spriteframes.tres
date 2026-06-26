@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dfgc4d0q2q5p0"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Death Message Sprite.aseprite-50ab36b7534fffab79bf6d2c623b7781.res" id="1_hmbp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0byrb"]
+atlas = ExtResource("1_hmbp6")
+region = Rect2(0, 0, 103, 97)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0byrb")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

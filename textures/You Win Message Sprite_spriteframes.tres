@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dxiqw5jg7y0kp"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/You Win Message Sprite.aseprite-e58296342216b67054fb1ee39641ee8b.res" id="1_4485u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v1d6"]
+atlas = ExtResource("1_4485u")
+region = Rect2(0, 0, 103, 97)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v1d6")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]

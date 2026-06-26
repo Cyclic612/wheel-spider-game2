@@ -29,7 +29,7 @@ var current_health : int = 50
 
 func _ready():
 	dash_cooldown.dashReplenished.connect(_dashModulation)
-
+	
 func _dashModulation():
 	var tween = create_tween()
 	$AnimatedSprite2D.modulate = Color(2, 2, 2, 2)

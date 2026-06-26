@@ -3,14 +3,11 @@
 importer="aseprite.spritesheet.importer"
 type="PortableCompressedTexture2D"
 uid="uid://cmrpcmp1jnj2c"
-path="res://.godot/imported/Healthbar Base.aseprite-a6a779c034570a3512fa435f8c6c4e10.res"
+valid=false
 
 [deps]
 
-files=["res://textures/Healthbar Base.tres", "res://textures/Healthbar Base_spriteframes.tres"]
-
 source_file="res://Healthbar Base.aseprite"
-dest_files=["res://.godot/imported/Healthbar Base.aseprite-a6a779c034570a3512fa435f8c6c4e10.res", "res://textures/Healthbar Base.tres", "res://textures/Healthbar Base_spriteframes.tres"]
 
 [params]
 

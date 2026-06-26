@@ -3,14 +3,11 @@
 importer="aseprite.spritesheet.importer"
 type="PortableCompressedTexture2D"
 uid="uid://dws00x76ygco3"
-path="res://.godot/imported/Spider Gamejam Title Sprite.aseprite-1d908de238fcafb124d310608d3aacb6.res"
+valid=false
 
 [deps]
 
-files=["res://textures/Spider Gamejam Title Sprite.tres", "res://textures/Spider Gamejam Title Sprite_spriteframes.tres"]
-
 source_file="res://Spider Gamejam Title Sprite.aseprite"
-dest_files=["res://.godot/imported/Spider Gamejam Title Sprite.aseprite-1d908de238fcafb124d310608d3aacb6.res", "res://textures/Spider Gamejam Title Sprite.tres", "res://textures/Spider Gamejam Title Sprite_spriteframes.tres"]
 
 [params]
 

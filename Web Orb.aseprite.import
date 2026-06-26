@@ -3,14 +3,11 @@
 importer="aseprite.spritesheet.importer"
 type="PortableCompressedTexture2D"
 uid="uid://cepr88sc58jps"
-path="res://.godot/imported/Web Orb.aseprite-a5e0e144bd6b429431640a33a153c8f0.res"
+valid=false
 
 [deps]
 
-files=["res://textures/Web Orb_0.tres", "res://textures/Web Orb_1.tres", "res://textures/Web Orb_2.tres", "res://textures/Web Orb_3.tres", "res://textures/Web Orb_4.tres", "res://textures/Web Orb_5.tres", "res://textures/Web Orb_6.tres", "res://textures/Web Orb_7.tres", "res://textures/Web Orb_spriteframes.tres"]
-
 source_file="res://Web Orb.aseprite"
-dest_files=["res://.godot/imported/Web Orb.aseprite-a5e0e144bd6b429431640a33a153c8f0.res", "res://textures/Web Orb_0.tres", "res://textures/Web Orb_1.tres", "res://textures/Web Orb_2.tres", "res://textures/Web Orb_3.tres", "res://textures/Web Orb_4.tres", "res://textures/Web Orb_5.tres", "res://textures/Web Orb_6.tres", "res://textures/Web Orb_7.tres", "res://textures/Web Orb_spriteframes.tres"]
 
 [params]
 

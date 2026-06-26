@@ -3,14 +3,11 @@
 importer="aseprite.spritesheet.importer"
 type="PortableCompressedTexture2D"
 uid="uid://bwpejumcif6ft"
-path="res://.godot/imported/Dash Cooldown Meter.aseprite-404092d3bf859ea2ded4786a9f07226d.res"
+valid=false
 
 [deps]
 
-files=["res://textures/Dash Cooldown Meter.tres", "res://textures/Dash Cooldown Meter_spriteframes.tres"]
-
 source_file="res://Dash Cooldown Meter.aseprite"
-dest_files=["res://.godot/imported/Dash Cooldown Meter.aseprite-404092d3bf859ea2ded4786a9f07226d.res", "res://textures/Dash Cooldown Meter.tres", "res://textures/Dash Cooldown Meter_spriteframes.tres"]
 
 [params]
 

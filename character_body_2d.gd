@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal healthChanged
+signal gameOver
 
 # Variable initialization for movement and dashing
 const SPEED : float = 500.0
@@ -21,8 +22,8 @@ var rope_length : float = 0.0
 @onready var rope_line : Line2D = $GrappleLine
 
 # Health initialization
-var max_health : int = 90
-var current_health : int = 90
+var max_health : int = 50
+var current_health : int = 50
 
 @export var dash_cooldown : Control
 
@@ -145,5 +146,6 @@ func _on_area_2d_body_entered(area: Node2D) -> void:
 		$AnimatedSprite2D.modulate = Color.DARK_RED
 		damage_tween.tween_property($AnimatedSprite2D, "modulate", Color.WHITE, 0.1)
 		
-		if current_health < 0:
-			print("you died!")
+		if current_health <= 0:
+			emit_signal("gameOver")
+			get_tree().paused = true

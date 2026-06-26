@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://jhoaupxsgakv"]
+
+[ext_resource type="Texture2D" path="res://.godot/imported/Return to Menu Sprite (gamejam).aseprite-e90ed5de3c6021f4c583f829aba6e027.res" id="1_24b8a"]
+
+[resource]
+atlas = ExtResource("1_24b8a")
+region = Rect2(0, 0, 64, 64)

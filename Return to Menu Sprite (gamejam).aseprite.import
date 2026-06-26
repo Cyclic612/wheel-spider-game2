@@ -1,0 +1,37 @@
+[remap]
+
+importer="aseprite.spritesheet.importer"
+type="PortableCompressedTexture2D"
+uid="uid://baddhjrv0ox4b"
+path="res://.godot/imported/Return to Menu Sprite (gamejam).aseprite-e90ed5de3c6021f4c583f829aba6e027.res"
+
+[deps]
+
+files=["res://textures/Return to Menu Sprite (gamejam)_0.tres", "res://textures/Return to Menu Sprite (gamejam)_1.tres", "res://textures/Return to Menu Sprite (gamejam)_spriteframes.tres"]
+
+source_file="res://Return to Menu Sprite (gamejam).aseprite"
+dest_files=["res://.godot/imported/Return to Menu Sprite (gamejam).aseprite-e90ed5de3c6021f4c583f829aba6e027.res", "res://textures/Return to Menu Sprite (gamejam)_0.tres", "res://textures/Return to Menu Sprite (gamejam)_1.tres", "res://textures/Return to Menu Sprite (gamejam)_spriteframes.tres"]
+
+[params]
+
+layers/export_hidden_layers=false
+layers/flatten_layer_groups=false
+layers/split_layers=false
+generate_resources/atlas_textures=true
+generate_resources/spriteframes=true
+generate_resources/ignore_framerate=false
+export_options/sheet_type=0
+export_options/sheet_width=0
+export_options/sheet_height=0
+export_options/sheet_columns=0
+export_options/sheet_rows=0
+export_options/border_padding=0
+export_options/shape_padding=0
+export_options/inner_padding=0
+export_options/trim=false
+export_options/extrude=false
+compress/mode=0
+compress/lossy_quality=0.8
+compress/normal_map=false
+debug/keep_json=false
+debug/keep_png=false

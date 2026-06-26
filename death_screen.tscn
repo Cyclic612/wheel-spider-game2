@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b2j01mq4mbd1c"]
+
+[ext_resource type="Texture2D" uid="uid://jhoaupxsgakv" path="res://textures/Return to Menu Sprite (gamejam)_0.tres" id="1_ex68u"]
+[ext_resource type="Texture2D" uid="uid://c5g2j1y0m1pvo" path="res://textures/Return to Menu Sprite (gamejam)_1.tres" id="2_6bi5g"]
+
+[node name="death_screen" type="Control" unique_id=1891263151]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=1484635381]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.049000002
+anchor_right = 0.028
+anchor_bottom = 0.049000002
+offset_left = -32.256
+offset_top = -31.752
+offset_right = 31.744
+offset_bottom = 32.248
+texture_normal = ExtResource("1_ex68u")
+texture_hover = ExtResource("2_6bi5g")

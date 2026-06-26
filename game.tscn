@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://c7gw6l7b5jdvu"]
 
 [ext_resource type="PackedScene" uid="uid://dyd0e7geaqfq0" path="res://character_body_2d.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bn6xckxhcnh6t" path="res://game.gd" id="1_ryrav"]
 [ext_resource type="PackedScene" uid="uid://1rw6qapq2rwg" path="res://enemy_spawner.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://c4gfes2a3yipe" path="res://healthbar.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://cvu81rm5ghb7f" path="res://dash_cooldown.tscn" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://drmlrjanfskgq" path="res://enemy.tscn" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://jhoaupxsgakv" path="res://textures/Return to Menu Sprite (gamejam)_0.tres" id="7_j5wjh"]
+[ext_resource type="Texture2D" uid="uid://c5g2j1y0m1pvo" path="res://textures/Return to Menu Sprite (gamejam)_1.tres" id="8_vef74"]
 
-[node name="game" type="Node2D" unique_id=1258414825]
+[node name="game" type="Node2D" unique_id=1258414825 node_paths=PackedStringArray("player")]
+script = ExtResource("1_ryrav")
+player = NodePath("player")
+
+[node name="enemy_spawner" parent="." unique_id=507985904 node_paths=PackedStringArray("target") instance=ExtResource("2_e2o6t")]
+enemy_prefab = ExtResource("3_feb5d")
+target = NodePath("../player")
 
 [node name="player" parent="." unique_id=973412525 node_paths=PackedStringArray("dash_cooldown") instance=ExtResource("1_80nbo")]
-position = Vector2(-46, -9)
+position = Vector2(270, 61)
 dash_cooldown = NodePath("dash_cooldown")
 
 [node name="healthbar" parent="player" unique_id=1731441223 node_paths=PackedStringArray("player") instance=ExtResource("2_fc0e3")]
@@ -27,6 +36,28 @@ offset_bottom = 23.0
 fill_mode = 1
 player = NodePath("..")
 
-[node name="enemy_spawner" parent="." unique_id=507985904 node_paths=PackedStringArray("target") instance=ExtResource("2_e2o6t")]
-enemy_prefab = ExtResource("3_feb5d")
-target = NodePath("../player")
+[node name="death_screen" type="Control" parent="player" unique_id=1160805327]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -270.0
+offset_top = -61.0
+offset_right = -230.0
+offset_bottom = -21.0
+
+[node name="MenuButton" type="TextureButton" parent="player/death_screen" unique_id=1384917834]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 68.0
+offset_right = 346.0
+offset_bottom = 132.0
+texture_normal = ExtResource("7_j5wjh")
+texture_hover = ExtResource("8_vef74")
+
+[node name="YouDied" type="TextureRect" parent="player/death_screen" unique_id=126511130]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=666439932]
